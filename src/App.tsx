@@ -1,34 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Button } from "./Button";
+import { horizontalList, rectangle, themeClass, vars } from "./global.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <main className={themeClass}>
+      <h2>Buttons</h2>
+      <ul className={horizontalList}>
+        <li>
+          <Button>Primary</Button>
+        </li>
+        <li>
+          <Button variant="secondary">Secondary</Button>
+        </li>
+      </ul>
+      <h2>Colors</h2>
+      {Object.entries(vars.colors.palette).map(([name, shades]) => (
+        <>
+          <h3>{name}</h3>
+          <ul className={horizontalList}>
+            {Object.entries(shades).map(([shade, color]) => (
+              <li key={shade}>
+                <div className={rectangle} style={{ backgroundColor: color }} />
+                <div>{shade}</div>
+              </li>
+            ))}
+          </ul>
+        </>
+      ))}
+    </main>
+  );
 }
 
-export default App
+export default App;
