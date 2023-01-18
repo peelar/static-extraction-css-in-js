@@ -1,16 +1,12 @@
 import { style, styleVariants } from "@vanilla-extract/css";
-import { vars } from "../global.css";
+import { vars } from "../theme.css";
 
 const base = style({
-  padding: "0.5rem 0.75rem",
+  padding: `${vars.space[2]} ${vars.space[3]}`,
   cursor: "pointer",
-  fontSize: "1rem",
+  fontSize: `${vars.sizes.md}`,
   borderRadius: "8px",
   border: "none",
-  transition: "all 0.2s",
-  ":hover": {
-    transform: "scale(1.02)",
-  },
 });
 
 const palette = {
@@ -35,7 +31,14 @@ export const buttonVariants = styleVariants(
     {
       backgroundColor: idleColor,
       color: textColor,
-      ":hover": { backgroundColor: activeColor },
+      ":disabled": {
+        cursor: "auto",
+        backgroundColor: vars.colors.common.gray,
+        color: vars.colors.common.darkGray,
+      },
+      selectors: {
+        "&:hover:not(:disabled)": { backgroundColor: activeColor },
+      },
     },
   ]
 );

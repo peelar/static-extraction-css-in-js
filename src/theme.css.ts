@@ -1,6 +1,36 @@
-import { createTheme, style, styleVariants } from "@vanilla-extract/css";
+import { createTheme } from "@vanilla-extract/css";
+
+import { globalStyle } from "@vanilla-extract/css";
+
+globalStyle("html, body", {
+  fontFamily: "sans-serif",
+});
 
 export const [themeClass, vars] = createTheme({
+  space: {
+    0: "0",
+    1: "0.25rem",
+    2: "0.5rem",
+    3: "0.75rem",
+    4: "1rem",
+    5: "1.25rem",
+    6: "1.5rem",
+    7: "1.75rem",
+    8: "2rem",
+  },
+  sizes: {
+    none: "0",
+    xs: "0.5rem",
+    sm: "0.75rem",
+    md: "1rem",
+    lg: "1.5rem",
+    xl: "2rem",
+    "2xl": "3rem",
+    "3xl": "4rem",
+    "4xl": "5rem",
+    "5xl": "6rem",
+    "6xl": "8rem",
+  },
   colors: {
     palette: {
       sky: {
@@ -30,22 +60,9 @@ export const [themeClass, vars] = createTheme({
     },
     common: {
       white: "#ffffff",
+      gray: "#f3f4f6",
+      darkGray: "#a0aec0",
+      black: "#111827",
     },
   },
-});
-
-export const rectangle = style({
-  width: "200px",
-  height: "40px",
-  borderRadius: "4px",
-  display: "flex",
-});
-
-export const horizontalList = style({
-  padding: 0,
-  margin: 0,
-  listStyle: "none",
-  display: "flex",
-  gap: "1rem",
-  flexWrap: "wrap",
 });
