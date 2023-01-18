@@ -1,12 +1,15 @@
 import { style } from "@vanilla-extract/css";
 import { themeVars } from "./theme.css";
+import { card } from "./utility.css";
 
-export const rectangle = style({
-  width: "200px",
-  height: "40px",
-  borderRadius: "4px",
-  display: "flex",
-});
+export const rectangle = style([
+  card,
+  {
+    width: "200px",
+    height: "40px",
+    display: "flex",
+  },
+]);
 
 export const horizontalList = style({
   padding: 0,

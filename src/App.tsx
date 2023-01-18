@@ -36,9 +36,9 @@ function App() {
       ))}
       <h2>Stack</h2>
       <Stack>
-        <div className={rectangle}>Hello 1</div>
-        <div className={rectangle}>Hello 2</div>
-        <div className={rectangle}>Hello 3</div>
+        <div className={rectangle}>Item 1</div>
+        <div className={rectangle}>Item 2</div>
+        <div className={rectangle}>Item 3</div>
       </Stack>
       <h2>Gradient</h2>
       <div className={`${rectangle} ${gradients.skyViolet}`} />

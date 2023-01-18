@@ -5,6 +5,11 @@ export const capitalize = style({
   textTransform: "capitalize",
 });
 
+export const card = style({
+  borderRadius: "4px",
+  boxShadow: "0 0 0 1px rgba(0, 0, 0, 0.1)",
+});
+
 type SplitColorShade = [PaletteColor, Shade];
 
 const makeGradient = (
