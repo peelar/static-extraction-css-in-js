@@ -6,7 +6,7 @@ import { capitalize, gradients } from "./utility.css";
 function App() {
   return (
     <main className={themeClass}>
-      <h1>Vanilla Extract UI-Kit</h1>
+      <h1>UI-Kit vanilla-extract</h1>
       <h2>Buttons</h2>
       <ul className={horizontalList}>
         <li>
