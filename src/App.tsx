@@ -1,5 +1,5 @@
-import { Button } from "./Button";
-import { vars, themeClass } from "./theme.css";
+import { Button } from "./components";
+import { themeVars, themeClass } from "./theme.css";
 import { capitalize, horizontalList, rectangle } from "./utility.css";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         </li>
       </ul>
       <h2>Colors</h2>
-      {Object.entries(vars.colors.palette).map(([name, shades]) => (
+      {Object.entries(themeVars.colors.palette).map(([name, shades]) => (
         <>
           <h3 className={capitalize}>{name}</h3>
           <ul className={horizontalList}>

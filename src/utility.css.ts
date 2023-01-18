@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { vars } from "./theme.css";
+import { themeVars } from "./theme.css";
 
 export const rectangle = style({
   width: "200px",
@@ -13,7 +13,7 @@ export const horizontalList = style({
   margin: 0,
   listStyle: "none",
   display: "flex",
-  gap: `${vars.space[4]}`,
+  gap: `${themeVars.space[4]}`,
   flexWrap: "wrap",
 });
 

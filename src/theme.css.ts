@@ -6,7 +6,7 @@ globalStyle("html, body", {
   fontFamily: "sans-serif",
 });
 
-export const [themeClass, vars] = createTheme({
+export const [themeClass, themeVars] = createTheme({
   space: {
     0: "0",
     1: "0.25rem",
