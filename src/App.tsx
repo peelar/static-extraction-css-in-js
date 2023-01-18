@@ -1,6 +1,7 @@
-import { Button } from "./components";
+import { Button, Stack } from "./components";
 import { themeVars, themeClass } from "./theme.css";
-import { capitalize, horizontalList, rectangle } from "./utility.css";
+import { horizontalList, rectangle } from "./App.css";
+import { capitalize, gradients } from "./utility.css";
 
 function App() {
   return (
@@ -33,6 +34,14 @@ function App() {
           </ul>
         </>
       ))}
+      <h2>Stack</h2>
+      <Stack>
+        <div className={rectangle}>Hello 1</div>
+        <div className={rectangle}>Hello 2</div>
+        <div className={rectangle}>Hello 3</div>
+      </Stack>
+      <h2>Gradient</h2>
+      <div className={`${rectangle} ${gradients.skyViolet}`} />
     </main>
   );
 }

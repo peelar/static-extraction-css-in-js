@@ -1,22 +1,24 @@
 import { style } from "@vanilla-extract/css";
-import { themeVars } from "./theme.css";
-
-export const rectangle = style({
-  width: "200px",
-  height: "40px",
-  borderRadius: "4px",
-  display: "flex",
-});
-
-export const horizontalList = style({
-  padding: 0,
-  margin: 0,
-  listStyle: "none",
-  display: "flex",
-  gap: `${themeVars.space[4]}`,
-  flexWrap: "wrap",
-});
+import { PaletteColor, PaletteColorShade, Shade, themeVars } from "./theme.css";
 
 export const capitalize = style({
   textTransform: "capitalize",
 });
+
+type SplitColorShade = [PaletteColor, Shade];
+
+const makeGradient = (
+  colorShade1: PaletteColorShade,
+  colorShade2: PaletteColorShade
+) => {
+  const [color1, shade1] = colorShade1.split(".") as SplitColorShade;
+  const [color2, shade2] = colorShade2.split(".") as SplitColorShade;
+
+  return style({
+    background: `linear-gradient(90deg, ${themeVars.colors.palette[color1][shade1]} 0%, ${themeVars.colors.palette[color2][shade2]} 100%)`,
+  });
+};
+
+export const gradients = {
+  skyViolet: makeGradient("sky.500", "violet.500"),
+};

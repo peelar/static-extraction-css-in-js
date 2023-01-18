@@ -66,3 +66,9 @@ export const [themeClass, themeVars] = createTheme({
     },
   },
 });
+
+export type PaletteColor = keyof typeof themeVars.colors.palette;
+
+export type Shade = keyof typeof themeVars.colors.palette.sky;
+
+export type PaletteColorShade = `${PaletteColor}.${Shade}`;
