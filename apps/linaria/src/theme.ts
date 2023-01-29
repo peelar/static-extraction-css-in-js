@@ -1,10 +1,4 @@
-import { createTheme, globalStyle } from "@vanilla-extract/css";
-
-globalStyle("html, body", {
-  fontFamily: "sans-serif",
-});
-
-export const [themeClass, themeVars] = createTheme({
+export const theme = {
   space: {
     0: "0",
     1: "0.25rem",
@@ -63,10 +57,4 @@ export const [themeClass, themeVars] = createTheme({
       black: "#111827",
     },
   },
-});
-
-export type PaletteColor = keyof typeof themeVars.colors.palette;
-
-export type Shade = keyof typeof themeVars.colors.palette.sky;
-
-export type PaletteColorShade = `${PaletteColor}.${Shade}`;
+};
