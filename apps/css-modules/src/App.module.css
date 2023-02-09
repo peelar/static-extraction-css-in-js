@@ -1,0 +1,8 @@
+.horizontalList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
